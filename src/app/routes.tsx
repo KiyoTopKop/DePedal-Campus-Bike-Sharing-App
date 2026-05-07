@@ -70,4 +70,4 @@ export const router = createBrowserRouter([
       { path: "override", Component: AdminOverride },
     ],
   },
-]);
+], { basename: import.meta.env.BASE_URL });
