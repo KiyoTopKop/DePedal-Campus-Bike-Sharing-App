@@ -21,6 +21,12 @@ const unavailableIcon = L.divIcon({
   html: "<div style='background:#9ca3af;width:14px;height:14px;border-radius:50%;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.3)'></div>",
   iconSize: [14, 14],
 });
+const stationIcon = L.divIcon({
+  className: '',
+  html: "<div style='background:#166534;width:16px;height:16px;border-radius:3px;border:2px solid white;box-shadow:0 0 4px rgba(0,0,0,0.35);transform:rotate(45deg)'></div>",
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+});
 
 const stationMarkers = [
   { name: 'JFH Kubo Station', position: [14.321384152364715, 120.9630291049015] as [number, number] },
@@ -151,7 +157,7 @@ export function AdminTracking() {
               pathOptions={{ color: '#166534', fillColor: '#166534', fillOpacity: 0.04, weight: 2 }}
             />
             {stationMarkers.map((station) => (
-              <Marker key={station.name} position={station.position}>
+              <Marker key={station.name} position={station.position} icon={stationIcon}>
                 <Popup>
                   <div className="p-1">
                     <p className="text-sm font-bold">{station.name}</p>
